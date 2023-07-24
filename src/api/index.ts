@@ -27,3 +27,13 @@ export const useQuestions = async () => {
 
   return res;
 };
+
+export const useDetail = async (name: string) => {
+  const { data } = await octokit.rest.repos.getContent({
+    owner,
+    repo,
+    path: `${path}/${name}/README.md`,
+  });
+
+  return atob((data as Question).content).toString().replace("Related Challenges", "");
+};

@@ -3,7 +3,7 @@ import { isDark, toggleDark } from "~/composables";
 </script>
 
 <template>
-  <header p="x-8 y-6" flex="~">
+  <header p="y-6" flex="~">
     <div mr-auto>
       <h2 font-bold text-2xl text-type>
         Type <span text-challenge>Challenges</span>

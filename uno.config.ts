@@ -10,6 +10,10 @@ export default defineConfig({
     colors: {
       type: "#294F80",
       challenge: "#4265AF",
+      btn: "#eff0f3",
+      btnDark: "#3A3A3A",
+      btnHover: "#e8eaf0",
+      btnDarkHover: "#4A4A4A",
     },
     breakpoints: {
     },

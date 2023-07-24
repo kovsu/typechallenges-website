@@ -1,16 +1,24 @@
 <script setup lang="ts">
+import { useDetail } from "~/api";
+
 const props = defineProps<{ name: string }>();
 const router = useRouter();
+
+const showMD = ref("");
+
+onMounted(async () => {
+  showMD.value = await useDetail(props.name);
+});
 </script>
 
 <template>
-  <div>
-    <p>
-      Hi, {{ props.name }}
-    </p>
-
+  <div text-start>
+    <VueShowdown
+      class="markdown-body"
+      :markdown="showMD"
+    />
     <div>
-      <button m-3 mt-8 text-sm btn @click="router.back()">
+      <button mt-4 text-xl btn @click="router.back()">
         Back
       </button>
     </div>

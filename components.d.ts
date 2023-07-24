@@ -10,6 +10,7 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     THeader: typeof import('./src/components/t-header.vue')['default']
+    TQuestionList: typeof import('./src/components/t-question-list.vue')['default']
     TSelectLevel: typeof import('./src/components/t-select-level.vue')['default']
   }
 }
