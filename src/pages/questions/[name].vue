@@ -5,7 +5,6 @@ const router = useRouter();
 
 <template>
   <div>
-    <div i-carbon-pedestrian inline-block text-4xl />
     <p>
       Hi, {{ props.name }}
     </p>
