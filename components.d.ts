@@ -11,6 +11,7 @@ declare module 'vue' {
     RouterView: typeof import('vue-router')['RouterView']
     TFooter: typeof import('./src/components/t-footer.vue')['default']
     THeader: typeof import('./src/components/t-header.vue')['default']
+    TLoading: typeof import('./src/components/t-loading.vue')['default']
     TQuestionList: typeof import('./src/components/t-question-list.vue')['default']
     TSelectLevel: typeof import('./src/components/t-select-level.vue')['default']
   }

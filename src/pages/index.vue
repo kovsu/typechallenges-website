@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { useQuestions } from "~/api";
+import { ls } from "~/composables";
 
 const router = useRouter();
-
 const questions = ref();
 const levels = ["warm", "easy", "medium", "hard", "extreme"];
+const { done } = ls();
 
 const levelColor: {
   [key: string]: string
@@ -26,8 +27,8 @@ function toDetail(name: string) {
 </script>
 
 <template>
-  <div v-if="!questions">
-    loading...
+  <div v-if="!questions" p-4 flex="~ items-center justify-center">
+    <t-loading />
   </div>
   <div v-else>
     <div v-for="level in levels" :key="level" flex="~ col">
@@ -39,8 +40,8 @@ function toDetail(name: string) {
       </div>
       <div flex="~ justify-start items-center wrap gap-2">
         <div v-for="question in questions[level]" :key="question.name">
-          <div bg-btn hover:bg-btnHover dark="bg-btnDark hover:bg-btnDarkHover" duration-100 :class="{ 'bg-green-500! text-white': question.name === '' }" py-2 px-3 rounded cursor-pointer @click="toDetail(question.name)">
-            <p>{{ question.name.split("-").slice(2).join(" ") }}</p>
+          <div bg-btn hover:bg-btnHover dark="bg-btnDark hover:bg-btnDarkHover" duration-100 :class="{ 'bg-green-500! text-white': done?.includes(parseInt(question.name.split('-')[0])) }" py-2 px-3 rounded cursor-pointer @click="toDetail(question.name)">
+            <p>{{ `${parseInt(question.name.split("-")[0])}. ${question.name.split("-").slice(2).join(" ")}` }}</p>
           </div>
         </div>
       </div>

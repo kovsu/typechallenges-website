@@ -5,6 +5,8 @@ export default defineConfig({
     [/^m-(\d+)$/, ([, d]) => ({ margin: `${parseInt(d) / 4}rem` })],
   ],
   shortcuts: {
+    btn: "rounded-lg px-4 py-2 bg-btn hover:bg-btnHover .dark:bg-btnDark .dark:hover:bg-btnDarkHover duration-100 ",
+    done: "bg-red-500! text-white!",
   },
   theme: {
     colors: {
