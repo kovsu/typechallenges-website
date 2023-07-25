@@ -5,8 +5,8 @@ import { VueShowdown } from "vue-showdown";
 import App from "./App.vue";
 
 import "@unocss/reset/tailwind.css";
-import "./github-markdown.css";
 import "./style.css";
+import "@kovsu/markdown-css";
 import "uno.css";
 
 const app = createApp(App);

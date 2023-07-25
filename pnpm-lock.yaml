@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@kovsu/markdown-css':
+    specifier: ^0.0.1
+    version: 0.0.1
   '@type-challenges/utils':
     specifier: ^0.1.1
     version: 0.1.1
@@ -496,6 +499,10 @@ packages:
       - supports-color
       - typescript
     dev: true
+
+  /@kovsu/markdown-css@0.0.1:
+    resolution: {integrity: sha512-+SdHXlKOUUmK9XnK75DsHIOFRQrMWQquCkqQ+Gs4c44Os346BzNmy+xnnR8MdeCPb06g8bTGn7gxmS77BrGkEQ==}
+    dev: false
 
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}

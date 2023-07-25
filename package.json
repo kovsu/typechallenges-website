@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@kovsu/markdown-css": "^0.0.1",
     "@type-challenges/utils": "^0.1.1",
     "@vueuse/core": "^10.2.1",
     "monaco-editor": "^0.40.0",
