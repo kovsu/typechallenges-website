@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@type-challenges/utils": "^0.1.1",
     "@vueuse/core": "^10.2.1",
     "monaco-editor": "^0.40.0",
     "octokit": "^3.0.0",

@@ -39,7 +39,7 @@ function toDetail(name: string) {
       </div>
       <div flex="~ justify-start items-center wrap gap-2">
         <div v-for="question in questions[level]" :key="question.name">
-          <div bg-btn hover:bg-btnHover dark="bg-btnDark hover:bg-btnDarkHover" duration-100 :class="{ 'bg-green-500! text-white': question.name === '02688-medium-startswith' }" py-2 px-3 rounded cursor-pointer @click="toDetail(question.name)">
+          <div bg-btn hover:bg-btnHover dark="bg-btnDark hover:bg-btnDarkHover" duration-100 :class="{ 'bg-green-500! text-white': question.name === '' }" py-2 px-3 rounded cursor-pointer @click="toDetail(question.name)">
             <p>{{ question.name.split("-").slice(2).join(" ") }}</p>
           </div>
         </div>

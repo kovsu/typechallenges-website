@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import * as monaco from "monaco-editor";
-import { useDetail } from "~/api";
+
+import { getTemplate, getTestCase, useDetail } from "~/api";
 import { isDark } from "~/composables";
 
 const props = defineProps<{ name: string }>();
@@ -11,6 +12,11 @@ const editorContainer = ref<HTMLDivElement | null>(null);
 
 onMounted(async () => {
   showMD.value = await useDetail(props.name);
+  const template = await getTemplate(props.name);
+  const testCase = await getTestCase(props.name);
+
+  const code = `${template}\n\n${testCase}`;
+
   setTimeout(() => {
     const { width, height } = document.querySelector(".markdown-body")!.getClientRects()[0];
 
@@ -18,7 +24,7 @@ onMounted(async () => {
     editorContainer.value!.style.height = `${height}px`;
 
     monaco.editor.create(editorContainer.value!, {
-      value: "// Type your TypeScript code here...",
+      value: code,
       language: "typescript",
       theme: isDark.value ? "vs-dark" : "vs-light",
     });

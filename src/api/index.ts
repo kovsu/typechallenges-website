@@ -37,3 +37,23 @@ export const useDetail = async (name: string) => {
 
   return atob((data as Question).content).toString().replace("Related Challenges", "");
 };
+
+export const getTemplate = async (name: string) => {
+  const { data } = await octokit.rest.repos.getContent({
+    owner,
+    repo,
+    path: `${path}/${name}/template.ts`,
+  });
+
+  return atob((data as Question).content).toString();
+};
+
+export const getTestCase = async (name: string) => {
+  const { data } = await octokit.rest.repos.getContent({
+    owner,
+    repo,
+    path: `${path}/${name}/test-cases.ts`,
+  });
+
+  return atob((data as Question).content).toString();
+};
